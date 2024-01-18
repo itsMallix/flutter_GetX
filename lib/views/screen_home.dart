@@ -37,6 +37,11 @@ class ScreenHome extends StatelessWidget {
                   ),
                   onPressed: () {
                     getController.decrement();
+                    Get.snackbar(
+                      "Dikurangi",
+                      "Number berhasil dikurangi",
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
                   },
                   child: const Icon(Icons.remove),
                 ),
@@ -47,10 +52,71 @@ class ScreenHome extends StatelessWidget {
                   ),
                   onPressed: () {
                     getController.increment();
+                    Get.snackbar(
+                      "Ditambah",
+                      "Number berhasil ditambah",
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
                   },
                   child: const Icon(Icons.add),
                 ),
               ],
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                Get.defaultDialog(
+                    title: "Test Dialogue",
+                    content: const Text("Test dialogue content"),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: const Text("Cancel"),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        child: const Text("Ok"),
+                      ),
+                    ]);
+              },
+              child: const Text(
+                "Test Dialog",
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                Get.bottomSheet(
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(12.0),
+                    decoration: const BoxDecoration(
+                      color: Colors.amber,
+                    ),
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Test Bottom sheet"),
+                        Text("Test Bottom sheet"),
+                        Text("Test Bottom sheet"),
+                        Text("Test Bottom sheet"),
+                      ],
+                    ),
+                  ),
+                );
+              },
+              child: const Text("Test Bottom Sheet"),
             )
           ],
         ),
