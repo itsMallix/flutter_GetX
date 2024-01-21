@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/controller/getx_controller.dart';
+import 'package:flutter_getx/views/screen_variable.dart';
 import 'package:get/get.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -18,22 +19,22 @@ class ScreenHome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetBuilder<NumController>(
-              // state management simple (butuh trigger) => getbuilder
-              builder: (controller) => Text(
-                "${getController.number}",
-              ),
-            ),
-            // Obx(
-            //   // state management reactive (langsung update) => obx
-            //   () => Text(
-            //     "${getController.number.value}", //ambil value untuk diambil datanya karena obs
-            //     style: const TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //       fontSize: 40,
-            //     ),
+            // GetBuilder<NumController>(
+            //   // state management simple (butuh trigger) => getbuilder
+            //   builder: (controller) => Text(
+            //     "${getController.number}",
             //   ),
             // ),
+            Obx(
+              // state management reactive (langsung update) => obx
+              () => Text(
+                "${getController.number.value}", //ambil value untuk diambil datanya karena obs
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                ),
+              ),
+            ),
             const SizedBox(height: 15.0),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -137,6 +138,13 @@ class ScreenHome extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          Get.to(const ScreenVariable());
+        },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
