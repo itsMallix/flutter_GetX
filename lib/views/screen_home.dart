@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/controller/getx_controller.dart';
+import 'package:flutter_getx/controller/num_controller.dart';
 import 'package:flutter_getx/views/screen_variable.dart';
 import 'package:get/get.dart';
 

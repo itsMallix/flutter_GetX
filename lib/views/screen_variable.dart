@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx/controller/getx_controller.dart';
+import 'package:flutter_getx/controller/num_controller.dart';
+import 'package:flutter_getx/views/screen_workers.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/routes/circular_reveal_clipper.dart';
 
 class ScreenVariable extends StatelessWidget {
   const ScreenVariable({super.key});
@@ -250,6 +250,13 @@ class ScreenVariable extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          Get.to(const ScreenWorker());
+        },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
