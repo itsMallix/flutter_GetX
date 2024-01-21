@@ -1,7 +1,18 @@
 import 'package:get/get.dart';
 
-class Controller extends GetxController {
-  var number = 0.obs; //state yang akan dipantau perubahannya
-  increment() => number++;
-  decrement() => number--;
+class NumController extends GetxController {
+  // var number = 0.obs; //state / nilai  yang akan dipantau perubahannya
+  int number = 0; //state / nilai  yang akan dipantau perubahannya
+
+  void incrementNumber() {
+    number++;
+  }
+
+  void decrementNumber() {
+    number--;
+  }
+
+  void refreshNumber() {
+    update();
+  }
 }

@@ -7,7 +7,7 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final getController = Get.put(Controller());
+    final getController = Get.put(NumController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("Belajar Getx"),
@@ -18,14 +18,31 @@ class ScreenHome extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(
-              () => Text(
-                "${getController.number.value}", //ambil value untuk diambil datanya karena obs
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                ),
+            GetBuilder<NumController>(
+              // state management simple (butuh trigger) => getbuilder
+              builder: (controller) => Text(
+                "${getController.number}",
               ),
+            ),
+            // Obx(
+            //   // state management reactive (langsung update) => obx
+            //   () => Text(
+            //     "${getController.number.value}", //ambil value untuk diambil datanya karena obs
+            //     style: const TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //       fontSize: 40,
+            //     ),
+            //   ),
+            // ),
+            const SizedBox(height: 15.0),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                getController.refreshNumber();
+              },
+              child: const Text("Refresh"),
             ),
             const SizedBox(height: 15.0),
             Row(
@@ -36,7 +53,7 @@ class ScreenHome extends StatelessWidget {
                     backgroundColor: Colors.amber,
                   ),
                   onPressed: () {
-                    getController.decrement();
+                    getController.decrementNumber();
                     Get.snackbar(
                       "Dikurangi",
                       "Number berhasil dikurangi",
@@ -51,7 +68,7 @@ class ScreenHome extends StatelessWidget {
                     backgroundColor: Colors.amber,
                   ),
                   onPressed: () {
-                    getController.increment();
+                    getController.incrementNumber();
                     Get.snackbar(
                       "Ditambah",
                       "Number berhasil ditambah",
