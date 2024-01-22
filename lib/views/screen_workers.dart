@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/controller/work_controller.dart';
+import 'package:flutter_getx/views/screen_dependency_1.dart';
 import 'package:flutter_getx/views/screen_dependency_2.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +42,7 @@ class ScreenWorker extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(const ScreenDependency());
+          Get.to(ScreenDependency1());
         },
         child: const Icon(Icons.play_arrow),
       ),
