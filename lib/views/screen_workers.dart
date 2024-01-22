@@ -31,7 +31,7 @@ class ScreenWorker extends StatelessWidget {
               onChanged: (value) {
                 workController.change();
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Data",
                 border: OutlineInputBorder(),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx/controller/deb_controller.dart';
+import 'package:flutter_getx/views/screen_route/route1.dart';
 import 'package:get/get.dart';
 
 class ScreenDependency2 extends StatelessWidget {
@@ -29,6 +30,13 @@ class ScreenDependency2 extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          Get.to(const ScreenRoute1());
+        },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }
