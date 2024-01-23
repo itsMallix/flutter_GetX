@@ -4,6 +4,7 @@ import 'package:flutter_getx/views/screen_route/route3.dart';
 import 'package:flutter_getx/views/screen_route/route4.dart';
 import 'package:flutter_getx/views/screen_route/route5.dart';
 import 'package:flutter_getx/views/screen_route/route6.dart';
+import 'package:flutter_getx/views/screen_route_named/screen_named_main.dart';
 import 'package:get/get.dart';
 
 class ScreenRoute1 extends StatelessWidget {
@@ -70,6 +71,13 @@ class ScreenRoute1 extends StatelessWidget {
           ),
           const SizedBox(height: 20),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          Get.to(const ScreenNamed());
+        },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }

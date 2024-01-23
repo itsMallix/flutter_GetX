@@ -1,11 +1,53 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class ScreenNamed extends StatelessWidget {
   const ScreenNamed({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Named Getx"),
+        backgroundColor: Colors.amber,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: ListView(
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                Get.toNamed("/variable");
+              },
+              child: const Text("Go to Screen Variable"),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                Get.toNamed("/dependency");
+              },
+              child: const Text("Go to Screen Dependency"),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.amber,
+              ),
+              onPressed: () {
+                Get.toNamed("/worker");
+              },
+              child: const Text("Go to Screen Worker"),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
