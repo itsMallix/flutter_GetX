@@ -142,7 +142,7 @@ class ScreenHome extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(const ScreenVariable());
+          Get.to(() => const ScreenVariable());
         },
         child: const Icon(Icons.play_arrow),
       ),

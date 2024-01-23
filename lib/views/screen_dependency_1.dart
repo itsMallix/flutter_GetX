@@ -30,7 +30,7 @@ class ScreenDependency1 extends StatelessWidget {
                   backgroundColor: Colors.amber,
                 ),
                 onPressed: () {
-                  Get.to(ScreenDependency2());
+                  Get.to(() => const ScreenDependency2());
                 },
                 child: const Text("Next to Dependency 2"),
               )

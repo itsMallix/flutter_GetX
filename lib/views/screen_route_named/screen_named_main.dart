@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_getx/controller/bind_controller.dart';
+import 'package:flutter_getx/views/screen_bindings/screen_binding_main.dart';
 import 'package:get/get.dart';
 
 class ScreenNamed extends StatelessWidget {
@@ -47,6 +49,28 @@ class ScreenNamed extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        onPressed: () {
+          // Get.to(() => const ScreenBindings()); // bisa pakai ini atau binding
+          // Get.to(
+          //   () => ScreenBindings(),
+          //   binding: BindingsBuilder(
+          //     () => Get.put(
+          //       BindingController(),
+          //     ),
+          //   ),
+          // ); // Ini salah
+          Get.to(
+            () => const ScreenBindings(),
+            binding: BindingsBuilder.put(
+              () =>
+                  BindingController(), // bidning conroller, jadi ga perlu di inisiasi di setiap page
+            ),
+          );
+        },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }

@@ -34,7 +34,7 @@ class ScreenDependency2 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(const ScreenRoute1());
+          Get.to(() => const ScreenRoute1());
         },
         child: const Icon(Icons.play_arrow),
       ),

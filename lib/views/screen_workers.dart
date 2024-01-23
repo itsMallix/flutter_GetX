@@ -41,7 +41,7 @@ class ScreenWorker extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(ScreenDependency1());
+          Get.to(() => ScreenDependency1());
         },
         child: const Icon(Icons.play_arrow),
       ),

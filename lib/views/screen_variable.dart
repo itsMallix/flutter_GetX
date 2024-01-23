@@ -254,7 +254,7 @@ class ScreenVariable extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(const ScreenWorker());
+          Get.to(() => const ScreenWorker());
         },
         child: const Icon(Icons.play_arrow),
       ),

@@ -25,7 +25,7 @@ class ScreenRoute1 extends StatelessWidget {
               backgroundColor: Colors.amber,
             ),
             onPressed: () {
-              Get.off(const ScreenRoute2()); //no back
+              Get.off(() => const ScreenRoute2()); //no back
             },
             child: const Text("Go To Route 2"),
           ),
@@ -35,7 +35,7 @@ class ScreenRoute1 extends StatelessWidget {
               backgroundColor: Colors.amber,
             ),
             onPressed: () {
-              Get.to(const ScreenRoute3()); //bisa back
+              Get.to(() => const ScreenRoute3()); //bisa back
             },
             child: const Text("Go To Route 3"),
           ),
@@ -45,7 +45,7 @@ class ScreenRoute1 extends StatelessWidget {
               backgroundColor: Colors.amber,
             ),
             onPressed: () {
-              Get.to(const ScreenRoute4());
+              Get.to(() => const ScreenRoute4());
             },
             child: const Text("Go To Route 4"),
           ),
@@ -55,7 +55,7 @@ class ScreenRoute1 extends StatelessWidget {
               backgroundColor: Colors.amber,
             ),
             onPressed: () {
-              Get.to(const ScreenRoute5());
+              Get.to(() => const ScreenRoute5());
             },
             child: const Text("Go To Route 5"),
           ),
@@ -65,7 +65,7 @@ class ScreenRoute1 extends StatelessWidget {
               backgroundColor: Colors.amber,
             ),
             onPressed: () {
-              Get.to(const ScreenRoute6());
+              Get.to(() => const ScreenRoute6());
             },
             child: const Text("Go To Route 6"),
           ),
@@ -75,7 +75,7 @@ class ScreenRoute1 extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
         onPressed: () {
-          Get.to(const ScreenNamed());
+          Get.to(() => const ScreenNamed());
         },
         child: const Icon(Icons.play_arrow),
       ),
